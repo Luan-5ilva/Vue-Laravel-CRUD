@@ -33,15 +33,15 @@
 <template>
             <section>
             <div class="titlebar">
-                <h1>Products</h1>
-                <button @click="newProduct">Add Product</button>
+                <h1>Produtos</h1>
+                <button @click="newProduct">Adicionar Produto</button>
             </div>
             <div class="table">
                 <div class="table-filter">
                     <div>
                         <ul class="table-filter-list">
                             <li>
-                                <p class="table-filter-link link-active">All</p>
+                                <p class="table-filter-link link-active">Todos</p>
                             </li>
                         </ul>
                     </div>
@@ -49,28 +49,28 @@
                 <div class="table-search">
                     <div>
                         <button class="search-select">
-                            Search Product
+                            Busca
                         </button>
                         <span class="search-select-arrow">
                             <i class="fas fa-caret-down"></i>
                         </span>
                     </div>
                     <div class="relative">
-                        <input class="search-input" type="text" placeholder="Search product...">
+                        <input class="search-input" type="text" placeholder="Procurar produto...">
                     </div>
                 </div>
                 <div class="table-product-head">
-                    <p>Image</p>
-                    <p>Name</p>
-                    <p>Category</p>
-                    <p>Inventory</p>
-                    <p>Actions</p>
+                    <p>Imagem</p>
+                    <p>Nome</p>
+                    <p>Categoria</p>
+                    <p>Estoque</p>
+                    <p>Ações</p>
                 </div>
                 <div class="table-product-body" v-for="product in products" :key="product.id">
                     <img :src="ourImage(product.image)" />
-                    <p> Product name</p>
-                    <p>Category</p>
-                    <p>Inventory</p>
+                    <p> {{product.name}}</p>
+                    <p>{{product.type}}</p>
+                    <p>{{product.quantity}}</p>
                     <div>
                         <button class="btn btn-success">
                             <i class="fas fa-pencil-alt"></i>
