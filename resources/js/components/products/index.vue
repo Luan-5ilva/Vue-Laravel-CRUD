@@ -1,5 +1,5 @@
 <script setup>
- import { onMounted, ref } from 'vue'
+ import { onMounted, ref, watch } from 'vue'
  import { useRouter } from 'vue-router'
 
 
@@ -7,7 +7,15 @@
 
  let products = ref([])
 
+ let links = ref([])
+
+ let searchQuery = ref('')
+
  onMounted(async () => {
+    getProducts()
+ })
+
+ watch(searchQuery, () =>{
     getProducts()
  })
  
@@ -22,10 +30,24 @@
  }
 
  const getProducts = async () => {
-    let response = await axios.get ('/api/products')
+    let response = await axios.get ('/api/products?&searchQuery='+searchQuery.value)
      .then((response) => {
-        products.value = response.data.products
+        products.value = response.data.products.data
+        links.value = response.data.products.links
     })
+ }
+
+ const changePage = (link) => {
+
+    if(!link.url || link.active){
+        return
+    }
+
+    axios.get(link.url)
+     .then((response) => {
+        products.value = response.data.products.data
+        links.value = response.data.products.links
+     })
  }
 
 </script>
@@ -56,7 +78,7 @@
                         </span>
                     </div>
                     <div class="relative">
-                        <input class="search-input" type="text" placeholder="Procurar produto...">
+                        <input class="search-input" type="text" placeholder="Procurar produto..." v-model="searchQuery">
                     </div>
                 </div>
                 <div class="table-product-head">
@@ -82,11 +104,16 @@
                 </div>
                 <div class="table-paginate">
                     <div class="pagination">
-                        <a href="#" disabled>&laquo;</a>
-                        <a class="active-page">1</a>
-                        <a>2</a>
-                        <a>3</a>
-                        <a href="#">&raquo;</a>
+                        <a 
+                        href="#"    
+                        class="btn"
+                        v-for="(link, index) in links"
+                        :key="index"
+                        v-html="link.label"
+                        :class="{ active: link.active, disable: !link.url}"
+                        @click="changePage(link)"
+                        ></a>
+           
                     </div>
                 </div>
             </div>
