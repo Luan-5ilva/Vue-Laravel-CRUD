@@ -1,5 +1,6 @@
 <script setup>
- import { reactive } from 'vue'
+ import { reactive, ref } from 'vue'
+ import { useRouter } from 'vue-router'
 
 
  const form = reactive({
@@ -11,6 +12,10 @@
     price: ""
 
  })
+
+ const router = useRouter()
+
+ let errors = ref([])
 
  const getImage = () => {
     let image = "/upload/no-image.png"
@@ -36,6 +41,15 @@
 
  const handleSave = () => {
     axios.post('/api/products', form)
+    .then((response)=>{
+        router.push('/')
+        toast.fire({ icon: "success", title: "Produto salvo com sucesso"})
+    })
+    .catch((error) =>{
+        if(error.response.status === 422){
+            errors.value = error.response.data.errors
+        }
+    })
  }
 
 </script>
@@ -51,8 +65,10 @@
                 <div>
                     <label>Name</label>
                     <input type="text" v-model="form.name">
+                    <small style="color:red" v-if="errors.name">{{ errors.name }}</small>
                     <label>Description (optional)</label>
                     <textarea cols="10" rows="5" v-model="form.description"></textarea>
+                    <small style="color:red" v-if="errors.description">{{ errors.description }}</small>
                     <label>Add Image</label>
                     <img :src="getImage()" alt="" class="img-product" />
                     <input type="file" @change="handleFileChange">
