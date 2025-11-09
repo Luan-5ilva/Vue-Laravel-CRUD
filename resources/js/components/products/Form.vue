@@ -96,7 +96,15 @@
             errors.value = error.response.data.errors
         }
     })
+  
  }
+
+ function translateError(msg) {
+  if (msg.includes('required')) return 'Este campo é obrigatório.'
+  if (msg.includes('must be a string')) return 'Deve ser um texto válido.'
+  return msg
+}
+
 
 </script>
 
@@ -114,10 +122,14 @@
                 <div>
                     <label>Nome</label>
                     <input type="text" v-model="form.name">
-                    <small style="color:red" v-if="errors.name">{{ errors.name }}</small>
-                    <label>Descrição (optional)</label>
+                    <small style="color:red" v-if="errors.description">
+                        {{ translateError(errors.description[0]) }}
+                    </small>
+                    <label>Descrição</label>
                     <textarea cols="10" rows="5" v-model="form.description"></textarea>
-                    <small style="color:red" v-if="errors.description">{{ errors.description }}</small>
+                    <small style="color:red" v-if="errors.description">
+                        {{ translateError(errors.description[0]) }}
+                    </small>
                     <label>Adicionar Imagem</label>
                     <img :src="getImage()" alt="" class="img-product" />
                     <input type="file" @change="handleFileChange">
