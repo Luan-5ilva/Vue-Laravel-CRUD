@@ -62,7 +62,8 @@
          showCancelButton: true,
          confirmButtonColor: "#3085d6",
          cancelButtonColor: "#d33",
-         confirmButtonText: "Sim, apagar!"
+         confirmButtonText: "Sim, apagar!",
+         cancelButtonText: "Cancelar"
     }).then((result) => {
     if (result.isConfirmed) {
         axios.delete(`/api/products/${id}`)
@@ -79,8 +80,8 @@
  }
 
  function formatLabel(label) {
-  if (label.includes('Previous')) return '< Anterior'
-  if (label.includes('Next')) return 'Próximo >'
+  if (label.includes('Previous')) return '<'
+  if (label.includes('Next')) return '>'
   return label
 }
 

@@ -502,10 +502,41 @@ footer {
 
 .pagination {
 
+    display: flex;
+    align-items: center;
     margin-bottom: 1rem;
     margin-right: 1rem;
     justify-content: center;
     color: #6a727a;
+    gap: 6px;
+
+}
+
+.pagination .btn {
+    font-size: 13px;
+    color: #555;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.pagination .btn:hover {
+    background: #f3f3f3;
+}
+
+.pagination .btn.active {
+    background: #6b46c1;
+    color: #fff;
+    border-color: #6b46c1;
+}
+
+
+.pagination .btn.disable {
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 .pagination a {
