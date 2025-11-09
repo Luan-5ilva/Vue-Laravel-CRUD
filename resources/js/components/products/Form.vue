@@ -1,6 +1,6 @@
 <script setup>
- import { reactive, ref } from 'vue'
- import { useRouter } from 'vue-router'
+ import { onMounted, reactive, ref } from 'vue'
+ import { useRouter, useRoute } from 'vue-router'
 
 
  const form = reactive({
@@ -15,7 +15,30 @@
 
  const router = useRouter()
 
+ const route = useRoute()
+
  let errors = ref([])
+
+ const editMode = ref(false)
+
+ onMounted(() =>{
+    if(route.name === 'products.edit'){
+        editMode.value = true
+        getProduct()
+    }
+ })
+
+ const getProduct = async () => {
+    let response = await axios.get(`/api/products/${route.params.id}/edit`)
+    .then((response) => {
+        form.name = response.data.product.name
+        form.description = response.data.product.description
+        form.image = response.data.product.image
+        form.type = response.data.product.type
+        form.quantity = response.data.product.quantity
+        form.price = response.data.product.price
+    })
+ }
 
  const getImage = () => {
     let image = "/upload/no-image.png"
@@ -39,11 +62,34 @@
     reader.readAsDataURL(file)
  }
 
- const handleSave = () => {
-    axios.post('/api/products', form)
+ const handleSave = (values, actions) => {
+
+    if(editMode.value){
+      updateProduct(values, actions)
+    }else{
+      createProduct(values, actions)
+    }    
+
+ }
+
+ const createProduct = (values, actions) => {
+   axios.post('/api/products', form)
     .then((response)=>{
         router.push('/')
         toast.fire({ icon: "success", title: "Produto salvo com sucesso"})
+    })
+    .catch((error) =>{
+        if(error.response.status === 422){
+            errors.value = error.response.data.errors
+        }
+    })
+ }
+
+ const updateProduct = (values, actions) => {
+       axios.put(`/api/products/${route.params.id}`, form)
+    .then((response)=>{
+        router.push('/')
+        toast.fire({ icon: "success", title: "Produto atualizado com sucesso"})
     })
     .catch((error) =>{
         if(error.response.status === 422){
@@ -58,35 +104,38 @@
 <template>
             <section>
             <div class="titlebar">
-                <h1>Create Product</h1>
+                <h1>
+                    <span v-if="editMode">Editar</span>
+                    <span v-else>Adiconar</span> 
+                    Produto</h1>
                 <button @click="handleSave">Save</button>
             </div>
             <div class="card">
                 <div>
-                    <label>Name</label>
+                    <label>Nome</label>
                     <input type="text" v-model="form.name">
                     <small style="color:red" v-if="errors.name">{{ errors.name }}</small>
-                    <label>Description (optional)</label>
+                    <label>Descrição (optional)</label>
                     <textarea cols="10" rows="5" v-model="form.description"></textarea>
                     <small style="color:red" v-if="errors.description">{{ errors.description }}</small>
-                    <label>Add Image</label>
+                    <label>Adicionar Imagem</label>
                     <img :src="getImage()" alt="" class="img-product" />
                     <input type="file" @change="handleFileChange">
                 </div>
                 <div>
-                    <label>Category</label>
+                    <label>Categoria</label>
                     <input type="text" v-model="form.type">
                     <hr>
-                    <label>Inventory</label>
+                    <label>Inventário</label>
                     <input type="text" class="input" v-model="form.quantity">
                     <hr>
-                    <label>Price</label>
+                    <label>Preço</label>
                     <input type="text" class="input" v-model="form.price">
                 </div>
             </div>
             <div class="titlebar">
                 <h1></h1>
-                <button @click="handleSave">Save</button>
+                <button @click="handleSave">Salvar</button>
             </div>
         </section>
 </template>

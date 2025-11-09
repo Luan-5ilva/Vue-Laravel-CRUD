@@ -50,6 +50,14 @@
      })
  }
 
+ const onEdit = (id) => {
+    router.push(`/products/${id}/edit`)
+ }
+
+ const deleProduct = (id) =>{
+    alert('deleted')
+ }
+
 </script>
 
 <template>
@@ -94,10 +102,10 @@
                     <p>{{product.type}}</p>
                     <p>{{product.quantity}}</p>
                     <div>
-                        <button class="btn btn-success">
+                        <button class="btn btn-success" @click="onEdit(product.id)">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
-                        <button class="btn btn-danger">
+                        <button class="btn btn-danger" @click="deleteProduct(product.id)">
                             <i class="far fa-trash-alt"></i>
                         </button>
                     </div>

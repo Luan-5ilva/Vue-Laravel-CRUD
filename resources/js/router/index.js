@@ -17,6 +17,11 @@ const routes = [
         component: productForm
     },
     {
+        path: '/products/:id/edit',
+        name: 'products.edit',
+        component: productForm
+    },
+    {
         path: '/:patchMatch(.*)*',
         name: 'notfound',
         component: notFound
