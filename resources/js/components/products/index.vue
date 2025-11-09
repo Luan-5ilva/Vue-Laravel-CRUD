@@ -56,20 +56,20 @@
 
  const deleteProduct = (id) =>{
    Swal.fire({
-         title: "Are you sure?",
-         text: "You won't be able to revert this!",
+         title: "Tem certeza?",
+         text: "Você não poderá reverter essa decisão!",
          icon: "warning",
          showCancelButton: true,
          confirmButtonColor: "#3085d6",
          cancelButtonColor: "#d33",
-         confirmButtonText: "Yes, delete it!"
+         confirmButtonText: "Sim, apagar!"
     }).then((result) => {
     if (result.isConfirmed) {
         axios.delete(`/api/products/${id}`)
          .then(() =>{
            Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
+            title: "Excluído!",
+            text: "Seu arquivo foi excluído.",
             icon: "success"
             });
             getProducts()
@@ -77,6 +77,13 @@
     }
     });
  }
+
+ function formatLabel(label) {
+  if (label.includes('Previous')) return '< Anterior'
+  if (label.includes('Next')) return 'Próximo >'
+  return label
+}
+
 
 </script>
 
@@ -132,15 +139,16 @@
                 </div>
                 <div class="table-paginate">
                     <div class="pagination">
-                        <a 
-                        href="#"    
-                        class="btn"
-                        v-for="(link, index) in links"
-                        :key="index"
-                        v-html="link.label"
-                        :class="{ active: link.active, disable: !link.url}"
-                        @click="changePage(link)"
-                        ></a>
+                    <a 
+                    href="#"    
+                    class="btn"
+                    v-for="(link, index) in links"
+                    :key="index"
+                    v-html="formatLabel(link.label)"
+                    :class="{ active: link.active, disable: !link.url }"
+                    @click="changePage(link)"
+                    ></a>
+
            
                     </div>
                 </div>
