@@ -1,70 +1,35 @@
-<h1 align="center"> 🚀✅ Vue-Laravel-CRUD - Concluído ✅🚀 </h1> <!-- ---------------------------------------------------------------------- --> <p align="center"> <a href="#-Descrição-do-entregável">Descrição do Entregável</a> • <a href="#-sobre-o-projeto">Sobre</a> • <a href="#-funcionalidades">Funcionalidades</a> • <a href="#-layout">Layout</a> • <a href="#-como-executar-o-projeto">Como executar</a> • <a href="#-tecnologias">Tecnologias</a> • <a href="#-autor">Autor</a> • <a href="#user-content--licença">Licença</a> </p>
-📄 Descrição do entregável
+# Vue-Laravel-CRUD
 
-Este repositório contém um CRUD completo (Create, Read, Update, Delete) desenvolvido com Laravel no backend e Vue.js no frontend.
-O projeto serve como exemplo prático de integração entre as duas tecnologias — permitindo o cadastro, listagem, edição e exclusão de produtos em uma interface moderna e reativa.
+Este projeto é um **desafio técnico** desenvolvido com as tecnologias Laravel e Vue.js, onde foi criado um sistema CRUD (Create, Read, Update, Delete) simples para demonstração de integração entre back-end em Laravel e front-end em Vue.
 
-💻 Sobre o projeto
+---
 
-Vue-Laravel-CRUD foi criado com o objetivo de demonstrar como construir uma aplicação fullstack simples utilizando Laravel (PHP) para a API e Vue 3 para o front-end.
+## Tecnologias utilizadas
 
-O projeto visa ensinar e exemplificar a comunicação entre frontend e backend via API REST, além de apresentar boas práticas de organização de código, rotas, e consumo de dados com Axios.
+- Back-end: Laravel (PHP)  
+- Front-end: Vue.js  
+- Build tools / bundler: Vite (incluído na estrutura Laravel + Vue)  
+- Banco de dados: qualquer compatível com Laravel (MySQL, SQLite, etc)  
+- Autenticação/API: utilização padrão do Laravel para rotas e controllers, com consumo via Vue  
+- Estrutura de pastas típica:  
+  - `app/`, `bootstrap/`, `config/`, `database/`, `public/`, `resources/`, `routes/`, `storage/`, `tests/` … :contentReference[oaicite:2]{index=2}  
+  - `resources/js` -> arquivos Vue, componentes, etc  
+  - `routes/web.php`, `routes/api.php` para definir rotas do Laravel
 
-⚙️ Funcionalidades
+---
 
- Cadastro de produtos
+## Como executar o projeto
 
- Listagem de produtos
+### Pré-requisitos
+- PHP (versão compatível com Laravel)  
+- Composer  
+- Node.js e npm ou yarn  
+- Banco de dados configurado  
 
- Edição de produtos
+### Passos
 
- Exclusão de produtos
+1. Clone o repositório  
+   ```bash
+   git clone https://github.com/Luan-5ilva/Vue-Laravel-CRUD.git
+   cd Vue-Laravel-CRUD
 
- Upload de imagens
-
- Feedback visual nas ações do usuário
-
-
-Pré-requisitos
-
-Antes de começar, você precisa ter instalado em sua máquina:
-
-Git
-
-PHP 8+
-
-Composer
-
-Node.js
-
-Um editor de código como VSCode
-
-🛠 Tecnologias
-
-As seguintes ferramentas foram usadas na construção do projeto:
-
-Backend (Laravel 10
-)
-
-Eloquent ORM
-
-Laravel Migrations
-
-Laravel Controllers
-
-API Resource
-
-Frontend (Vue 3
-)
-
-Vue Router
-
-Axios
-
-Bootstrap
-
-Font Awesome
-
-Banco de Dados
-
-MySQL
