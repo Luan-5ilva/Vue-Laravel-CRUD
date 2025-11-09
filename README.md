@@ -1,59 +1,70 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center"> 🚀✅ Vue-Laravel-CRUD - Concluído ✅🚀 </h1> <!-- ---------------------------------------------------------------------- --> <p align="center"> <a href="#-Descrição-do-entregável">Descrição do Entregável</a> • <a href="#-sobre-o-projeto">Sobre</a> • <a href="#-funcionalidades">Funcionalidades</a> • <a href="#-layout">Layout</a> • <a href="#-como-executar-o-projeto">Como executar</a> • <a href="#-tecnologias">Tecnologias</a> • <a href="#-autor">Autor</a> • <a href="#user-content--licença">Licença</a> </p>
+📄 Descrição do entregável
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este repositório contém um CRUD completo (Create, Read, Update, Delete) desenvolvido com Laravel no backend e Vue.js no frontend.
+O projeto serve como exemplo prático de integração entre as duas tecnologias — permitindo o cadastro, listagem, edição e exclusão de produtos em uma interface moderna e reativa.
 
-## About Laravel
+💻 Sobre o projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Vue-Laravel-CRUD foi criado com o objetivo de demonstrar como construir uma aplicação fullstack simples utilizando Laravel (PHP) para a API e Vue 3 para o front-end.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+O projeto visa ensinar e exemplificar a comunicação entre frontend e backend via API REST, além de apresentar boas práticas de organização de código, rotas, e consumo de dados com Axios.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+⚙️ Funcionalidades
 
-## Learning Laravel
+ Cadastro de produtos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+ Listagem de produtos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ Edição de produtos
 
-## Laravel Sponsors
+ Exclusão de produtos
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+ Upload de imagens
 
-### Premium Partners
+ Feedback visual nas ações do usuário
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
+Pré-requisitos
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Antes de começar, você precisa ter instalado em sua máquina:
 
-## Code of Conduct
+Git
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+PHP 8+
 
-## Security Vulnerabilities
+Composer
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Node.js
 
-## License
+Um editor de código como VSCode
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+Backend (Laravel 10
+)
+
+Eloquent ORM
+
+Laravel Migrations
+
+Laravel Controllers
+
+API Resource
+
+Frontend (Vue 3
+)
+
+Vue Router
+
+Axios
+
+Bootstrap
+
+Font Awesome
+
+Banco de Dados
+
+MySQL
