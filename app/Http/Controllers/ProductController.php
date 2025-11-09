@@ -15,7 +15,7 @@ class ProductController extends Controller
         if ($request->searchQuery != '') {
             $products = Product::where('name', 'like', '%' . $request->searchQuery . '%');
         }
-        $products = $products->latest()->paginate(4);
+        $products = $products->latest()->paginate(5);
 
         return response()->json([
             "products" => $products
