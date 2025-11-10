@@ -1,63 +1,79 @@
-                                         # Vue-Laravel-CRUD
+<h1 align="center">🚀 Vue + Laravel CRUD</h1>
 
-Este projeto é um **desafio técnico** desenvolvido com as tecnologias Laravel e Vue.js, onde foi criado um sistema CRUD (Create, Read, Update, Delete) simples para demonstração de integração entre back-end em Laravel e front-end em Vue.
-
----
-
-## Tecnologias utilizadas
-
-- Back-end: Laravel (PHP)  
-- Front-end: Vue.js  
-- Build tools / bundler: Vite (incluído na estrutura Laravel + Vue)  
-- Banco de dados: qualquer compatível com Laravel (MySQL, SQLite, etc)  
-- Autenticação/API: utilização padrão do Laravel para rotas e controllers, com consumo via Vue  
-- Estrutura de pastas típica:  
-  - `resources/js` -> arquivos Vue, componentes, etc  
-  - `routes/web.php`, `routes/api.php` para definir rotas do Laravel
+<p align="center">
+  <b>Um projeto fullstack simples com Laravel e Vue.js</b><br>
+  CRUD completo (Create, Read, Update, Delete) demonstrando a integração entre back-end e front-end.
+</p>
 
 ---
 
-                                        ## COMO EXECUTAR O PROJETO
+## 🧩 Tecnologias Utilizadas
 
-### Pré-requisitos
-- PHP (versão compatível com Laravel)  
-- Composer  
-- Node.js e npm ou yarn  
-- Banco de dados configurado  
+| Camada | Tecnologia | Descrição |
+|:-------|:------------|:-----------|
+| **Back-end** | 🧱 Laravel (PHP) | Framework principal do servidor |
+| **Front-end** | ⚡ Vue.js | Interface reativa e modular |
+| **Build Tool** | 🔧 Vite | Compilação e hot reload integrados |
+| **Banco de Dados** | 🗄️ MySQL / SQLite / outro compatível | Persistência de dados |
+| **API** | 🔗 Laravel API padrão | Comunicação com o front-end Vue |
 
-## PASSOS
+**Estrutura típica do projeto:**
+resources/js/ → componentes Vue
+routes/web.php → rotas web Laravel
+routes/api.php → rotas de API
 
-1. Clone o repositório  
-   bash
-   git clone https://github.com/Luan-5ilva/Vue-Laravel-CRUD.git
-   cd Vue-Laravel-CRUD
+<h2 align="center">⚙️ COMO EXECUTAR O PROJETO</h2>
 
-2. Instale as dependências do back-end (Laravel)
-   bash
-   composer install
+### 📋 Pré-requisitos
 
-3. Copie o arquivo de ambiente e configure as variáveis de ambiente (como banco de dados, chave de aplicativo, etc)
-   bash
-   cp .env.example .env
-   php artisan key:generate
+- PHP (versão compatível com o Laravel)
+- Composer
+- Node.js + npm ou yarn
+- Banco de dados configurado
 
-4. Execute as migrações do banco de dados
-   bash
-   php artisan migrate
+---
 
-5. Instale as dependências do front-end (Vue)
-   npm install
+## 🪜 Passo a Passo
 
-6. Compile os assets front-end
-   npm run dev
+### 1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/Luan-5ilva/Vue-Laravel-CRUD.git
+cd Vue-Laravel-CRUD
+```
 
-7. Inicie o servidor Laravel
-   bash
-   php artisan serve
+### 2️⃣ Clonar o repositório
+```bash
+composer install
+```
 
-   O servidor normalmente estará disponível em http://127.0.0.1:8000.
+### 3️⃣ Configurar o ambiente
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## OBSERVAÇÕES
-   - Certifique-se de que a rota de API usada pelo front-end está corretamente apontada.
-     (no arquivo Vue ou configuração de ambiente).
-   - Este projeto é ideal para estudar a integração Laravel + Vue de forma simples, com estrutura CRUD básica.
+### 4️⃣ Executar as migrações do banco de dados
+```bash
+php artisan migrate
+```
+
+### 5️⃣ Instalar dependências do Vue
+```bash
+npm install
+```
+
+### 6️⃣ Compilar o front-end
+```bash
+npm run dev
+```
+
+### 7️⃣ Iniciar o servidor Laravel
+```bash
+php artisan serve
+```
+
+💡 Observações
+
+Certifique-se de que a rota da API usada pelo front-end está corretamente configurada.
+Ideal para estudos sobre integração entre Laravel + Vue com um CRUD funcional.
+Pode ser expandido com autenticação, upload de arquivos, ou componentes adicionais.
