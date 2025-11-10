@@ -21,12 +21,10 @@
 
 ---
 
-<h2 align="center">🧱 Estrutura típica do projeto:
+<h2 align="left">🧱 Estrutura típica do projeto:
 
 resources/js/ → componentes Vue
-
 routes/web.php → rotas web Laravel
-
 routes/api.php → rotas de API
 
 <h2 align="center">⚙️ COMO EXECUTAR O PROJETO</h2>
