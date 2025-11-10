@@ -22,7 +22,7 @@
 ---
 
 <h2 align="left">🧱 Estrutura típica do projeto:
-
+---
 
 - resources/js/ → componentes Vue
 - routes/web.php → rotas web Laravel
