@@ -18,8 +18,7 @@
 | **Build Tool** | 🔧 Vite | Compilação e hot reload integrados |
 | **Banco de Dados** | 🗄️ MySQL / SQLite / outro compatível | Persistência de dados |
 | **API** | 🔗 Laravel API padrão | Comunicação com o front-end Vue |
-
-
+---
 Estrutura típica do projeto:
 
 resources/js/ → componentes Vue
