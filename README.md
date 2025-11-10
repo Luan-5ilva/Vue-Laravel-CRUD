@@ -18,8 +18,10 @@
 | **Build Tool** | 🔧 Vite | Compilação e hot reload integrados |
 | **Banco de Dados** | 🗄️ MySQL / SQLite / outro compatível | Persistência de dados |
 | **API** | 🔗 Laravel API padrão | Comunicação com o front-end Vue |
+
 ---
-Estrutura típica do projeto:
+
+<h2 align="center">🧱 Estrutura típica do projeto:
 
 resources/js/ → componentes Vue
 
@@ -77,7 +79,7 @@ npm run dev
 php artisan serve
 ```
 
-💡 Observações
+<h2 align="center">💡 Observações
 
 Certifique-se de que a rota da API usada pelo front-end está corretamente configurada.
 
