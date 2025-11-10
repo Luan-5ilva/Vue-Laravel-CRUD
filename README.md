@@ -84,5 +84,7 @@ php artisan serve
 ---
 
 -Certifique-se de que a rota da API usada pelo front-end está corretamente configurada.
+
 -Ideal para estudos sobre integração entre Laravel + Vue com um CRUD funcional.
+
 -Pode ser expandido com autenticação, upload de arquivos, ou componentes adicionais.
