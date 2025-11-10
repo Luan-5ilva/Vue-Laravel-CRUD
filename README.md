@@ -48,7 +48,7 @@ git clone https://github.com/Luan-5ilva/Vue-Laravel-CRUD.git
 cd Vue-Laravel-CRUD
 ```
 
-### 2️⃣ Clonar o repositório
+### 2️⃣ Instalar dependências do Laravel
 ```bash
 composer install
 ```
