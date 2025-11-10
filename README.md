@@ -9,6 +9,7 @@
 
 <h2 align="center">🧩 Tecnologias Utilizadas
 
+---
 
 | Camada | Tecnologia | Descrição |
 |:-------|:------------|:-----------|
